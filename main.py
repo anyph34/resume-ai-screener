@@ -10,6 +10,9 @@ from job_analyzer import analyze_job_description
 from matcher import calculate_match_score
 
 app = FastAPI(title="AI Resume Screener")
+@app.get("/health")
+def health():
+    return {"status": "ok"}
 
 app.add_middleware(
     CORSMiddleware,
